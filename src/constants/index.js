@@ -91,7 +91,7 @@ export const brainwaveServicesIcons = [
 
 export const roadmap = [
   {
-    id: "0",
+    id: "sjf",
     title: "Shortest Job First",
     text: "The shortest job first (SJF) algorithm where process with the smallest execution time is selected for execution next. It aims to minimize the average waiting time and turnaround time of processes, thus optimizing system performance.",
     date: "ALGO 1",
@@ -99,7 +99,7 @@ export const roadmap = [
     colorful: true,
   },
   {
-    id: "1",
+    id: "dp",
     title: "Dinning Philosopher's Problem with Semaphore",
     text: "It is a synchronization issue where multiple processes compete for a finite set of resources (chopsticks), requiring mutual exclusion and deadlock avoidance to ensure proper dining etiquette and prevent resource contention.",
     date: "Algo 2",
@@ -107,7 +107,7 @@ export const roadmap = [
     colorful: true,
   },
   {
-    id: "2",
+    id: "clook",
     title: "C-Look Disk Scheduling",
     text: "It is a disk scheduling algorithm that services requests in a circular manner, scanning from the current position to the end of the disk, then back to the beginning, optimizing disk access time by reducing seek time.",
     date: "ALGO 3",
@@ -115,7 +115,7 @@ export const roadmap = [
     colorful: true,
   },
   {
-    id: "3",
+    id: "fifo",
     title: "FIFO Page Relpacement",
     text: "FIFO (First-In-First-Out) page replacement algorithm in operating systems selects the oldest page in memory for replacement when a new page needs to be loaded.",
     date: "ALGO 4",
