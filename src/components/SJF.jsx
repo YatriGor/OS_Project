@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './Button';
 
 function SJF() {
   const [processes, setProcesses] = useState([]);
@@ -77,78 +78,81 @@ function SJF() {
 
     // Create the Gantt chart
     const chart = document.createElement('div');
-    chart.classList.add('flex', 'mt-4');
+    chart.classList.add('flex');
     ganttData.forEach((process) => {
       const task = document.createElement('div');
-      task.classList.add('inline-block', 'bg-blue-500', 'text-white', 'text-center', 'p-2', 'mr-1');
+      task.classList.add('inline-block', 'bg-slate-600', 'text-white', 'text-center', 'p-2', 'mr-1');
       task.style.width = `${(process.endTime - process.startTime) * unitWidth}px`;
       task.textContent = `P${process.id}`;
       chart.appendChild(task);
     });
-
+    
     document.body.appendChild(chart);
   };
+  
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Shortest Job First Scheduler</h1>
+      <h1 className="text-3xl text-center font-semibold mb-4">SHORTEST JOB FIRST SCHEDULER</h1>
       <div className="mb-4">
-        <label className="mr-2">Arrival Time:</label>
-        <input
-          type="number"
-          value={arrivalTime}
-          onChange={(e) => setArrivalTime(e.target.value)}
-          className="border border-purple-500 p-2 text-white bg-none"
-        />
-        <label className="mx-2">Burst Time:</label>
-        <input
-          type="number"
-          value={burstTime}
-          onChange={(e) => setBurstTime(e.target.value)}
-          className="border border-purple-500 p-2 text-white bg-none"
-        />
-        <button onClick={addProcess} className="bg-blue-500 text-white px-4 py-2 rounded-md ml-2">
-          Add Process
-        </button>
-      </div>
-          <div className="flex flex-col md:flex-row gap-4">
-      <button onClick={calculateWaitingTime} className="bg-green-500 text-white px-4 py-2 rounded-md mb-4">
-        Calculate Average Waiting Time
-      </button>
-      <button onClick={generateGanttChart} className="bg-purple-500 text-white px-4 py-2 rounded-md mb-4">
-        Generate Gantt Chart
-      </button>
+      <div className="flex flex-col md:flex-row items-center my-10 gap-4 text-center">
+  <label className="mr-2 text-lg">Arrival Time : </label>
+  <input
+    type="number"
+    value={arrivalTime}
+    onChange={(e) => setArrivalTime(e.target.value)}
+    className="border border-purple-500 rounded-md px-4 py-2 text-white bg-transparent focus:outline-none focus:border-purple-700"
+/>
+  <label className="mx-2 text-lg">Burst Time : </label>
+  <input
+    type="number"
+    value={burstTime}
+    onChange={(e) => setBurstTime(e.target.value)}
+    className="border border-purple-500 rounded-md px-4 py-2 text-white bg-transparent focus:outline-none focus:border-purple-700"
+/>
+  <Button onClick={addProcess} className="text-lg">
+    Add Process 
+  </Button>
+</div>
+
+        <div className="flex flex-col md:flex-row my-10 gap-4">
+          <Button onClick={calculateWaitingTime} className="text-lg">
+            Calculate Average Waiting Time
+          </Button>
+          <Button onClick={generateGanttChart} className="text-lg">
+            Generate Gantt Chart
+          </Button>
+        </div>
     </div>
 
-      <h2 className="text-xl font-bold mb-2">Processes:</h2>
-      <table className="w-full mb-4">
+      <table className="w-full my-6">
         <thead>
           <tr>
-            <th className="border border-gray-400 px-4 py-2">#</th>
-            <th className="border border-gray-400 px-4 py-2">Arrival Time</th>
-            <th className="border border-gray-400 px-4 py-2">Burst Time</th>
-            <th className="border border-gray-400 px-4 py-2">Waiting Time</th>
-            <th className="border border-gray-400 px-4 py-2">Turnaround Time</th>
-            <th className="border border-gray-400 px-4 py-2">Start Time</th>
-            <th className="border border-gray-400 px-4 py-2">Completion Time</th>
+            <th className="border border-teal-500 px-4 py-2 bg-teal-400 text-slate-900">Process</th>
+            <th className="border border-yellow-400 px-4 py-2 bg-yellow-200 text-slate-900">Arrival Time</th>
+            <th className="border border-purple-600 px-4 py-2 bg-purple-400 text-slate-900">Burst Time</th>
+            <th className="border border-pink-400 px-4 py-2 bg-pink-300 text-slate-900">Waiting Time</th>
+            <th className="border border-blue-500 px-4 py-2 bg-blue-300 text-slate-900">Turnaround Time</th>
+            <th className="border border-indigo-600 px-4 py-2 bg-indigo-400 text-slate-900">Start Time</th>
+            <th className="border border-green-600 px-4 py-2 bg-green-300 text-slate-900">Completion Time</th>
           </tr>
         </thead>
         <tbody>
           {processes.map((process) => (
             <tr key={process.id}>
-              <td className="border border-gray-400 px-4 py-2">{process.id}</td>
-              <td className="border border-gray-400 px-4 py-2">{process.arrivalTime}</td>
-              <td className="border border-gray-400 px-4 py-2">{process.burstTime}</td>
-              <td className="border border-gray-400 px-4 py-2">{process.waitingTime}</td>
-              <td className="border border-gray-400 px-4 py-2">{process.turnaroundTime}</td>
-              <td className="border border-gray-400 px-4 py-2">{process.startTime}</td>
-              <td className="border border-gray-400 px-4 py-2">{process.completionTime}</td>
+              <td className="border border-teal-500 px-4 py-2">{process.id}</td>
+              <td className="border border-yellow-400 px-4 py-2">{process.arrivalTime}</td>
+              <td className="border border-purple-600 px-4 py-2">{process.burstTime}</td>
+              <td className="border border-pink-400 px-4 py-2">{process.waitingTime}</td>
+              <td className="border border-blue-500 px-4 py-2">{process.turnaroundTime}</td>
+              <td className="border border-indigo-600 px-4 py-2">{process.startTime}</td>
+              <td className="border border-green-600 px-4 py-2">{process.completionTime}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <h2 className="text-xl font-bold mt-4">Average Waiting Time: {averageWaitingTime}</h2>
-      <h2 className="text-xl font-bold mt-4">Average Turnaround Time: {averageTurnaroundTime}</h2>
+      <h2 className="text-2xl font-bold my-4">Average Waiting Time : {averageWaitingTime}</h2>
+      <h2 className="text-2xl font-bold mt-4">Average Turnaround Time : {averageTurnaroundTime}</h2>
     </div>
   );
 }

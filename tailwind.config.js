@@ -50,6 +50,8 @@ export default {
       opacity: {
         15: ".15",
       },
+    
+      
       transitionDuration: {
         DEFAULT: "200ms",
       },

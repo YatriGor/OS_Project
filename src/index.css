@@ -86,3 +86,10 @@
 .-rotate-360 {
   @apply rotate-[-360deg]
 }
+
+.border-gradient-green-yellow-blue {
+  border-image: linear-gradient(to right, #00FF00, #FFFF00, #0000FF);
+  border-image-slice: 1;
+}
+
+

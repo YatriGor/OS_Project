@@ -14,7 +14,9 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-just-parallax": "^3.1.16",
-    
+    "react-router-dom": "^5.3.4",
+    "react-switch": "^7.0.0",
+    "redirect": "^0.2.0",
     "scroll-lock": "^2.1.5",
     "uuid": "^9.0.1"
   },
