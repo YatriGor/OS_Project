@@ -8,14 +8,14 @@ const CompanyLogos = ({ className }) => {
         Team Memebers
       </h5>
       <ul className="flex">
-        <li className="flex items-center justify-center flex-1 h-[8.5rem]">Dev</li>
-        <li className="flex items-center justify-center flex-1 h-[8.5rem]">Kathan</li>
-        <li className="flex items-center justify-center flex-1 h-[8.5rem]">Yatri</li>
-        <li className="flex items-center justify-center flex-1 h-[8.5rem]">Heet</li>
-        <li className="flex items-center justify-center flex-1 h-[8.5rem]">Rajat</li>
+        <li className="flex text-xl items-center justify-center flex-1 h-[8.5rem]">Dev</li>
+        <li className="flex text-xl items-center justify-center flex-1 h-[8.5rem]">Kathan</li>
+        <li className="flex text-xl items-center justify-center flex-1 h-[8.5rem]">Yatri</li>
+        <li className="flex text-xl items-center justify-center flex-1 h-[8.5rem]">Heet</li>
+        <li className="flex text-xl items-center justify-center flex-1 h-[8.5rem]">Rajat</li>
       </ul>
       <ul className="flex mb-10">
-        <li className="flex items-center justify-center flex-1 h-[0.5rem]"><TagLine>22BCP185</TagLine> </li>
+        <li className="flex items-center text-xl justify-center flex-1 h-[0.5rem]"><TagLine>22BCP185</TagLine> </li>
         <li className="flex items-center justify-center flex-1 h-[0.5rem]"><TagLine>22BCP162</TagLine> </li>
         <li className="flex items-center justify-center flex-1 h-[0.5rem]"><TagLine>22BCP176</TagLine> </li>
         <li className="flex items-center justify-center flex-1 h-[0.5rem]"><TagLine>22BCP169</TagLine> </li>

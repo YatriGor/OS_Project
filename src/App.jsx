@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Collaboration from "./components/Collaboration";
 import Roadmap from "./components/Roadmap";
 import SJF from "./components/SJF";
 import FIFOPageReplacement from "./components/FIFO";
@@ -18,7 +17,6 @@ const App = () => {
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <Hero />
-        <Collaboration />
         <Roadmap/>
         {/* Wrap Routes inside Switch */}
         <Switch>
